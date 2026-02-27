@@ -1,5 +1,5 @@
 export default async (fastify, opts) => {
-  fastify.get('/', async (req, res) => {
+  fastify.get('/', (req, res) => {
     res.send('Hello World!')
   })
 }
