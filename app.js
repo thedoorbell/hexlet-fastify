@@ -1,6 +1,8 @@
 import path from 'node:path'
 import AutoLoad from '@fastify/autoload'
 import { fileURLToPath } from 'node:url'
+import view from '@fastify/view'
+import pug from 'pug'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -10,7 +12,7 @@ export const options = {}
 
 export default async function (fastify, opts) {
   // Place here your custom code!
-
+  await fastify.register(view, { engine: { pug } })
   // Do not touch the following lines
 
   // This loads all plugins defined in plugins

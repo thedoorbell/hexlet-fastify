@@ -1,4 +1,7 @@
 export default async (fastify, opts) => {
+  fastify.get('/courses', (req, res) => {
+    res.view('src/views/courses/index')
+  })
   fastify.get('/courses/new', (req, res) => {
     res.send('Course build')
   })
