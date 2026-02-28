@@ -1,0 +1,14 @@
+extends ../layouts/index.pug
+
+block content
+  div.table-responsive
+    table.table.table-borderless.table-striped.mt-5.bg-white
+      thead
+        tr
+          th Имя пользователя
+          th email
+      tbody
+        each user in users
+          tr
+            td= user.name
+            td= user.email

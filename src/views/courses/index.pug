@@ -1,5 +1,25 @@
 extends ../layouts/index.pug
 
 block content 
-  p курсы бл
+  .card.shadow-sm
+    .card-body.p-4
+      form(role='form' action='/courses' method='get')
+        .row
+          .col-12.col-md
+            label(for= 'filterTitle') Название курса
+            input.form-control(id= 'filterTitle' name= 'title' value= title)
+        input(class='btn btn-primary' type='submit' value= 'Поиск')
+
+  div.table-responsive
+    table.table.table-borderless.table-striped.mt-5.bg-white
+      thead
+        tr
+          th Идентификатор
+          th Название
+      tbody
+        each course in courses
+          tr
+            td= course.id
+            td
+              a(href=`/courses/${course.id}`)= course.title
 

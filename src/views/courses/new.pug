@@ -1,0 +1,13 @@
+extends ../layouts/index.pug
+
+block content 
+  .card.shadow-sm
+      .card-body.p-5
+        form(action = '/courses', method = 'post')
+          .row
+            label Название курса:
+              input.form-control(type = 'text', name = 'title')
+          .row
+            label Описание:
+              input.form-control(type = 'text', name = 'description')
+          input.mt-3(class='btn btn-primary' type = 'submit', value = 'Добавить')
